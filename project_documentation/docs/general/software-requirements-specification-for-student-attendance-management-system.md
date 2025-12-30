@@ -2,7 +2,7 @@
 title: Software Requirements Specification for Student Attendance Management System
 type: srs
 created: 2025-12-30 12:08:41.164000
-updated: 2025-12-30 12:08:41.164000
+updated: 2025-12-30 14:44:57.971000
 synced_from: VibeProject
 ---
 
@@ -24,6 +24,36 @@ The system includes a web-based application with a React frontend and a Python F
 - **UI**: User Interface
 - **CRUD**: Create, Read, Update, Delete
 - **SQL**: Structured Query Language
+
+```mermaid
+flowchart TD
+    Start([Start Application]) --> Dashboard[View Dashboard: Real-time Statistics Overview]
+    Dashboard --> StudentMgmt{Student Management?}
+    StudentMgmt -->|Yes| AddStudent[Add New Student: ID, Name, Email, Phone, Course]
+    AddStudent --> ViewStudents[View All Students in Table]
+    ViewStudents --> EditStudent{Edit Student?}
+    EditStudent -->|Yes| UpdateStudent[Update Student Information]
+    UpdateStudent --> ViewStudents
+    EditStudent -->|No| DeleteStudent{Delete Student?}
+    DeleteStudent -->|Yes| RemoveStudent[Delete Student and Attendance Records]
+    RemoveStudent --> ViewStudents
+    DeleteStudent -->|No| BackToDashboard[Back to Dashboard]
+    StudentMgmt -->|No| AttendanceMarking{Attendance Marking?}
+    AttendanceMarking -->|Yes| SelectDate[Select Date for Attendance]
+    SelectDate --> MarkAttendance[Mark Attendance: Present/Absent/Late for Students]
+    MarkAttendance --> BulkSave[Bulk Save Attendance]
+    BulkSave --> ViewAttendance[View Attendance Records for Date]
+    ViewAttendance --> BackToDashboard
+    AttendanceMarking -->|No| Reports{View Reports?}
+    Reports -->|Yes| IndividualReport[View Individual Student Attendance Report]
+    IndividualReport --> StudentStats[Get Student-Specific Statistics]
+    StudentStats --> OverallStats[View Overall Statistics]
+    OverallStats --> FilterDate[Filter Attendance by Date]
+    FilterDate --> ViewAllRecords[View All Attendance Records]
+    ViewAllRecords --> BackToDashboard
+    Reports -->|No| BackToDashboard
+    BackToDashboard --> Dashboard
+```
 
 ### 1.4 References
 - Project README.md

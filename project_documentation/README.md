@@ -19,10 +19,14 @@ Frontend Tasks
 
 | Title | Type | Preview |
 |-------|------|---------|
+| Flowchart | FLOWCHART | [diagrams/flowchart/flowchart.md](./diagrams/flowchart/flowchart.md) |
+| Sequence Diagram | SEQUENCE | [diagrams/sequence/sequence-diagram.md](./diagrams/sequence/sequence-diagram.md) |
+| ER Diagram | ER | [diagrams/general/er-diagram.md](./diagrams/general/er-diagram.md) |
+| Architecture | ARCHITECTURE | [diagrams/architecture/architecture.md](./diagrams/architecture/architecture.md) |
 
 
 ---
 
-*Last synced: 2025-12-30 12:14 UTC*
+*Last synced: 2025-12-30 15:13 UTC*
 
 > 🔄 This content is managed by VibeProject. Changes made here may be overwritten on next sync.
